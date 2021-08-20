@@ -60,6 +60,7 @@ const Login = (props) => {
   }
 
   return (
+    <section className="landing-background109">
 <div ><div><div style={{
         width: "200px",
         height: "100px",
@@ -108,10 +109,9 @@ const Login = (props) => {
   
   </div>
 </div>
-    <ParticlesBg color="#9acfce" num={200} type="cobweb" bg={true} />
     </div>
     
-   
+    </section>
   );
 };
 

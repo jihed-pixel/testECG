@@ -72,7 +72,7 @@ const SearchPatient1 = (props) => {
               {(search2 != 0) && ((typeof (props.patientList) === 'string' && props.patientList) ||
                 (
                   <View style={tailwind('items-center')}>
-                  <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>{t("prenom")} </Text>
+                  <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>{props.patientList.cin} </Text>
                     <FormButton title={t("Suivant")} onPress={() => { props.navigation.navigate("Interrogatoire") }} />
                   </View>
 

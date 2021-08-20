@@ -148,7 +148,7 @@ const EtudeECG = (props) => {
     }
 
     return (
-        <section className="landing-background">
+        <section className="landing-background201">
         <div class="row">
   <div class=" d-flex  m-4 col-md-6  " >
   <MDBContainer   >

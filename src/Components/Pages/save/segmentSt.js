@@ -124,7 +124,7 @@ const SegmentSt = (props) => {
     }
 
     return (
-        <section className="landing-background">
+        <section className="landing-background109">
         <div class="row">
   <div class=" d-flex  m-4 col-md-6  " >
   <MDBContainer   >

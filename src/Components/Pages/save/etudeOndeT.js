@@ -111,7 +111,7 @@ const EtudeOndeT = (props) => {
     }
 
     return (
-        <section className="landing-background">
+        <section className="landing-background200">
         <div class="row">
   <div class=" d-flex  m-4 col-md-6  " >
   <MDBContainer   >

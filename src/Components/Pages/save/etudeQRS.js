@@ -126,7 +126,7 @@ const EtudeQRS = (props) => {
     }
 
     return (
-      <section className="landing-background">
+      <section className="landing-background203">
       <div>
       
       <div class="row">

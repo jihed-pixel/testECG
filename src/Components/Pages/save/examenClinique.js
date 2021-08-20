@@ -93,8 +93,9 @@ const ExamenClinique = (props) => {
     var handle2Change = (text) => {
 
       setTaille(text)
-      setBmi(0.0003207*poids*(0.7285-0.0188*Math.log(poids)*taille*0.3))
+      setBmi(0.0003207*Math.pow(poids*(0.7285-(0.0188*Math.log(poids))))*Math.pow(taille/100, 0.3))
       setSc(poids/Math.pow(taille*100, 2))
+      console.log(Bmi)
     }
     var handle3Change = (text) => {
 
@@ -179,7 +180,7 @@ const ExamenClinique = (props) => {
     }
 
     return (
-      <section className="landing-background">
+      <section className="landing-background200">
       <div class="row">
 <div class=" d-flex  m-4 col-md-6  " >
 <MDBContainer   >
@@ -198,8 +199,8 @@ const ExamenClinique = (props) => {
           placeholder={t("La taille (cm)")}
           onChange={handle2Change}
         />
-        <Text style={tailwind('text-lg p-2 text-gray-700')}>Le calcul de la surface corporelle (SC): {poids/Math.pow(taille*100, 2)}</Text>
-        <Text style={tailwind('text-lg p-2 text-gray-700')}>BMI: {0.0003207*poids*(0.7285-0.0188*Math.log(poids)*taille*0.3)}</Text>
+        <Text style={tailwind('text-lg p-2 text-gray-700')}>Le calcul de la surface corporelle (SC): {poids/Math.pow(taille/100, 2)}</Text>
+        <Text style={tailwind('text-lg p-2 text-gray-700')}>BMI: {0.0003207*Math.pow(poids*(0.7285-(0.0188*Math.log(poids))))*Math.pow(taille/100, 0.3)}</Text>
         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>TA aux deux bras après 5 min de repos :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAS</Text>
