@@ -3,6 +3,8 @@ import apiMedicalService from "./apiMedicalService";
 export const ACTION_TYPES = {
   LOGIN: "LOGIN",
   LOGOUT: "LOGOUT",
+  LOGINADMIN: "LOGINADMIN",
+  ALL_PATIENT:"ALL_PATIENT",
   ADD_PATIENT: "ADD_PATIENT",
   SEARCH_PATIENT: "SEARCH_PATIENT",
   INFOS_GENERALES: "INFOS_GENERALES",
@@ -96,10 +98,10 @@ export const addPatient = (values) => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
-export const searchPatient = (search) => (dispatch) => {
+export const searchPatient = (search,search1) => (dispatch) => {
   apiMedicalService
     .medicalService()
-    .searchPatient(search)
+    .searchPatient(search,search1)
     .then((response) => {
       dispatch({
         type: ACTION_TYPES.SEARCH_PATIENT,
@@ -109,6 +111,42 @@ export const searchPatient = (search) => (dispatch) => {
     })
     .catch((err) => console.log(err))
 }
+export const allPatient = () => (dispatch) => {
+  apiMedicalService
+    .medicalService()
+    .allPatient()
+    .then((response) => {
+      dispatch({
+        type: ACTION_TYPES.ALL_PATIENT,
+        payload: response.data
+      });
+
+    })
+    .catch((err) => console.log(err))
+}
+export const loginAdmin = (values) => (dispatch) => {
+  apiMedicalService
+    .medicalService()
+    .loginAdmin(values)
+    .then((response) => {
+      dispatch({
+        type: ACTION_TYPES.LOGINADMIN,
+        payload: response.data,
+      });
+      const loggedUserAdmin = response.data;
+      if (loggedUserAdmin == "") {
+        localStorage.setItem("loggedUserAdmin", JSON.stringify(null))
+      } else if (loggedUserAdmin == "Username or/and password is/are incorrect") {
+        localStorage.setItem("loggedUserAdmin", JSON.stringify(null))
+
+      } else {
+        localStorage.setItem("loggedUserAdmin", JSON.stringify(loggedUserAdmin))
+
+
+      }
+    })
+    .catch((err) => console.log(err));
+};
 export const examenCliniquePatient = (cin, values) => (dispatch) => {
   apiMedicalService
     .medicalService()

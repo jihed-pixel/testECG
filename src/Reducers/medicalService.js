@@ -1,6 +1,7 @@
 import { ACTION_TYPES } from "../Actions/medicalService";
 const initialState = {
   loggedUser: null,
+  loggedUserAdmin: null,
   message: "" ,
   patientList:[]
 };
@@ -12,6 +13,17 @@ export const medicalService = (state = initialState, action) => {
       return {
         ...state,
         loggedUser: action.payload,
+        //message:action.payload
+      };
+      case ACTION_TYPES.ALL_PATIENT:
+        return {
+          ...state,
+          patientList1:action.payload
+        }
+      case ACTION_TYPES.LOGINADMIN:
+      return {
+        ...state,
+        loggedUserAdmin: action.payload,
         //message:action.payload
       };
       case ACTION_TYPES.LOGOUT:

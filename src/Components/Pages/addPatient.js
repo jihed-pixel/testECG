@@ -4,6 +4,7 @@ import FormInput3 from "../Form/FormInput3";
 import tailwind from 'tailwind-rn';
 import Steps from "../Form/Steps";
 import FormButton from '../Form/FormButton';
+import InputRd from '../Form/inputrd';
 import * as actions from "../../Actions/medicalService";
 import { connect } from "react-redux";
 import '@assenti/rui-components/css/index.css';
@@ -33,13 +34,11 @@ const AddPatient = (props) => {
         random: 10
       };
 
-
   useEffect(() => {
-
-
-  }, [localStorage.getItem("addPatientMessage")])
+  },[props.loggedUser] [localStorage.getItem("addPatientMessage")])
 
   const [cin, setCin] = useState()
+  const [cinD, setCinD] = useState()
   const [age, setAge] = useState()
   const [sexe, setSexe] = useState()
   const [dateD, setDateD] = useState()
@@ -58,6 +57,7 @@ const AddPatient = (props) => {
   var handleSubmit = (e) => {
     var values = {
       cin: cin,
+      cinD: props.loggedUser.username,
       ville:ville,
       age:age,
       sexe: sexe,
@@ -152,14 +152,11 @@ const AddPatient = (props) => {
           <label class="form-label p-3 mx-4">Date De Naissance :</label>
           <input class="border border-primary" type="date"  data-date="" data-date-format="DD MMMM YYYY" onChange={handleAgeChange}/>
           </div>
-       
-        <View style={styles.row}>
-          <div >
+          <div class="row mx-4">
           <Text style={tailwind('text-gray-700 text-lg py-2')}>Sexe :</Text>
-            <input  onChange={handleSexeChange} type="radio" value="Male" name="gender2" /> <Text style={tailwind('text-gray-700 py-2')}>{t("Male")}</Text>
-            <input  onChange={handleSexeChange} type="radio" value="Female" name="gender2" /> <Text style={tailwind('text-gray-700 py-2')}>{t("Female")}</Text>
-          </div>
-        </View>
+          <InputRd  onChange={handleSexeChange} type="radio" value="Male" name="gender" id="0" name1="Male"/>
+          <InputRd  onChange={handleSexeChange} type="radio" value="Female" name="gender" id="1" name1="Female"/>
+        </div>
         <div>
           <label class="form-label p-3 mx-4">Date du début d’entrainement:</label>
           <input class="border border-primary" type="date"  data-date="" data-date-format="DD MMMM YYYY" onChange={handleDateDChange}/>
@@ -169,9 +166,9 @@ const AddPatient = (props) => {
         <View style={styles.row}>
           <div >
             <Text style={tailwind('text-gray-700 text-lg py-2')}>Sport pratiqué :</Text>
-            <input  onChange={handleSportChange} type="radio" value="statique" name="gender3" /> <Text style={tailwind('text-gray-700 py-2')}>statique</Text>
-            <input  onChange={handleSportChange} type="radio" value="dynamique" name="gender3" /> <Text style={tailwind('text-gray-700 py-2')}>dynamique</Text>
-            <input  onChange={handleSportChange} type="radio" value="mixte" name="gender3" /> <Text style={tailwind('text-gray-700 py-2')}>mixte</Text>
+            <InputRd  onChange={handleSportChange} type="radio" value="statique" name="gender3" id="2" name1="statique"/> 
+            <InputRd  onChange={handleSportChange} type="radio" value="dynamique" name="gender3" id="3" name1="dynamique"/> 
+            <InputRd  onChange={handleSportChange} type="radio" value="mixte" name="gender3" id="4" name1="mixte"/> 
           </div>
         </View>
         <div>
@@ -242,7 +239,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({
-  patientList: state.medicalService.patientList
+  patientList: state.medicalService.patientList,
+  loggedUser: state.medicalService.loggedUser,
 });
 const mapActionToProps = {
   cc: actions.addPatient

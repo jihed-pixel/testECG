@@ -14,6 +14,7 @@ import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
+import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 let config = {
       num: [4, 7],
@@ -418,9 +419,9 @@ var handle117Change = (text) => {
             <Text style={tailwind('text-gray-700 font-bold text-xl text-center')}>Epreuve d'effort</Text>
             <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("")}</Text>
             <h3></h3>
-            <div  >
-                <input  type="radio" value="épuisement musculaire" name="gender111" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Vélo-ergométrique</Text>
-                <input  type="radio" value="troubles de conduction sévères" name="gender111" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Tapis roulant</Text>
+            <div class="row mx-4">
+                <InputRd id="1" name1="Vélo-ergométrique"  type="radio" value="épuisement musculaire" name="gender111" /> 
+                <InputRd id="2" name1="Tapis roulant"  type="radio" value="troubles de conduction sévères" name="gender111" /> 
             </div>
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>1er Palier(2min):</Text>
             <div class="row">
@@ -441,30 +442,30 @@ var handle117Change = (text) => {
             </div>
             <div class="row">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de conduction </Text>
-                <input onChange={handle5Change} type="radio" value="Non" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle5Change} type="radio" value="Oui" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="3" name1="Non" onChange={handle5Change} type="radio" value="Non" name="gender2" /> 
+                <InputRd id="4" name1="Oui" onChange={handle5Change} type="radio" value="Oui" name="gender2" /> 
             </div>
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle100Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
-                <input onChange={handle6Change} type="radio" value="Non" name="gender3" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle6Change} type="radio" value="Oui" name="gender3" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="5" name1="Non" onChange={handle6Change} type="radio" value="Non" name="gender3" /> 
+                
+                <InputRd id="6" name1="Oui" onChange={handle6Change} type="radio" value="Oui" name="gender3" /> 
+                
             </div>
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle101Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
-                <input onChange={handle7Change} type="radio" value="Non" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle7Change} type="radio" value="Oui" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="7" name1="Non" onChange={handle7Change} type="radio" value="Non" name="gender4" /> 
+                <InputRd id="8" name1="Oui" onChange={handle7Change} type="radio" value="Oui" name="gender4" /> 
             </div>
             {trouRyt === true &&
                     <FormInput
@@ -491,30 +492,30 @@ var handle117Change = (text) => {
             </div>
             <div class="row">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de conduction </Text>
-                <input onChange={handle25Change} type="radio" value="Non" name="gender22" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle25Change} type="radio" value="Oui" name="gender22" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="9" name1="Non" onChange={handle25Change} type="radio" value="Non" name="gender22" /> 
+                <InputRd id="10" name1="Oui" onChange={handle25Change} type="radio" value="Oui" name="gender22" /> 
             </div>
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle103Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
-                <input onChange={handle26Change} type="radio" value="Non" name="gender23" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle26Change} type="radio" value="Oui" name="gender23" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="11" name1="Non" onChange={handle26Change} type="radio" value="Non" name="gender23" /> 
+                
+                <InputRd id="12" name1="Oui" onChange={handle26Change} type="radio" value="Oui" name="gender23" /> 
+                
             </div>
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle104Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
-                <input onChange={handle27Change} type="radio" value="Non" name="gender24" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle27Change} type="radio" value="Oui" name="gender24" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="13" name1="Non" onChange={handle27Change} type="radio" value="Non" name="gender24" /> 
+                <InputRd id="14" name1="Oui" onChange={handle27Change} type="radio" value="Oui" name="gender24" /> 
             </div>
             {trouRyt === true &&
                     <FormInput
@@ -541,30 +542,30 @@ var handle117Change = (text) => {
             </div>
             <div class="row">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de conduction </Text>
-                <input onChange={handle35Change} type="radio" value="Non" name="gender32" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle35Change} type="radio" value="Oui" name="gender32" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="15" name1="Non" onChange={handle35Change} type="radio" value="Non" name="gender32" /> 
+                <InputRd id="16" name1="Oui" onChange={handle35Change} type="radio" value="Oui" name="gender32" /> 
             </div>
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle106Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
-                <input onChange={handle36Change} type="radio" value="Non" name="gender33" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle36Change} type="radio" value="Oui" name="gender33" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="17" name1="Non" onChange={handle36Change} type="radio" value="Non" name="gender33" /> 
+                
+                <InputRd id="18" name1="Oui" onChange={handle36Change} type="radio" value="Oui" name="gender33" /> 
+                
             </div>
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle107Change}
                   />}
-                  <div  >
+                  <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
-                <input onChange={handle37Change} type="radio" value="Non" name="gender34" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle37Change} type="radio" value="Oui" name="gender34" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="19" name1="Non" onChange={handle37Change} type="radio" value="Non" name="gender34" /> 
+                <InputRd id="20" name1="Oui" onChange={handle37Change} type="radio" value="Oui" name="gender34" /> 
             </div>
             {trouRyt === true &&
                     <FormInput
@@ -591,30 +592,30 @@ var handle117Change = (text) => {
             </div>
             <div class="row">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de conduction </Text>
-                <input onChange={handle45Change} type="radio" value="Non" name="gender42" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle45Change} type="radio" value="Oui" name="gender42" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="22" name1="Non" onChange={handle45Change} type="radio" value="Non" name="gender42" /> 
+                <InputRd id="23" name1="Oui" onChange={handle45Change} type="radio" value="Oui" name="gender42" /> 
             </div>
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle109Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
-                <input onChange={handle46Change} type="radio" value="Non" name="gender43" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle46Change} type="radio" value="Oui" name="gender43" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="24" name1="Non" onChange={handle46Change} type="radio" value="Non" name="gender43" /> 
+                
+                <InputRd id="25" name1="Oui" onChange={handle46Change} type="radio" value="Oui" name="gender43" /> 
+                
             </div>
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle110Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
-                <input onChange={handle47Change} type="radio" value="Non" name="gender44" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle47Change} type="radio" value="Oui" name="gender44" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="26" name1="Non" onChange={handle47Change} type="radio" value="Non" name="gender44" /> 
+                <InputRd id="27" name1="Oui" onChange={handle47Change} type="radio" value="Oui" name="gender44" /> 
             </div>
             {trouRyt === true &&
                     <FormInput
@@ -641,30 +642,30 @@ var handle117Change = (text) => {
             </div>
             <div class="row">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de conduction </Text>
-                <input onChange={handle55Change} type="radio" value="Non" name="gender52" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle55Change} type="radio" value="Oui" name="gender52" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="28" name1="Non" onChange={handle55Change} type="radio" value="Non" name="gender52" /> 
+                <InputRd id="29" name1="Oui" onChange={handle55Change} type="radio" value="Oui" name="gender52" /> 
             </div>
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle112Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
-                <input onChange={handle56Change} type="radio" value="Non" name="gender53" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle56Change} type="radio" value="Oui" name="gender53" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="30" name1="Non" onChange={handle56Change} type="radio" value="Non" name="gender53" /> 
+                
+                <InputRd id="31" name1="Oui" onChange={handle56Change} type="radio" value="Oui" name="gender53" /> 
+                
             </div>
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle113Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
-                <input onChange={handle57Change} type="radio" value="Non" name="gender54" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle57Change} type="radio" value="Oui" name="gender54" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="" name1="Non" onChange={handle57Change} type="radio" value="Non" name="gender54" /> 
+                <InputRd id="" name1="Oui" onChange={handle57Change} type="radio" value="Oui" name="gender54" /> 
             </div>
             {trouRyt === true &&
                     <FormInput
@@ -690,30 +691,30 @@ var handle117Change = (text) => {
             </div>
             <div class="row">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de conduction </Text>
-                <input onChange={handle65Change} type="radio" value="Non" name="gender62" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle65Change} type="radio" value="Oui" name="gender62" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="33" name1="Non" onChange={handle65Change} type="radio" value="Non" name="gender62" /> 
+                <InputRd id="34" name1="Oui" onChange={handle65Change} type="radio" value="Oui" name="gender62" /> 
             </div>
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle115Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
-                <input onChange={handle66Change} type="radio" value="Non" name="gender63" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle66Change} type="radio" value="Oui" name="gender63" /> 
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="35" name1="Non" onChange={handle66Change} type="radio" value="Non" name="gender63" /> 
+                
+                <InputRd id="36" name1="Oui" onChange={handle66Change} type="radio" value="Oui" name="gender63" /> 
+                
             </div>
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
                     onChange={handle116Change}
                   />}
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
-                <input onChange={handle67Change} type="radio" value="Non" name="gender64" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle67Change} type="radio" value="Oui" name="gender64" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="37" name1="Non" onChange={handle67Change} type="radio" value="Non" name="gender64" /> 
+                <InputRd id="38" name1="Oui" onChange={handle67Change} type="radio" value="Oui" name="gender64" /> 
             </div>
             {trouRyt === true &&
                     <FormInput

@@ -14,6 +14,7 @@ import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
+import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
 let config = {
@@ -93,9 +94,9 @@ const ExamenClinique = (props) => {
     var handle2Change = (text) => {
 
       setTaille(text)
-      setBmi(0.0003207*Math.pow(poids*(0.7285-(0.0188*Math.log(poids))))*Math.pow(taille/100, 0.3))
+      setBmi(0.0003207*Math.pow((1000*poids),(0.7285-(0.0188*Math.log10(poids*1000))))*Math.pow(taille, 0.3))
       setSc(poids/Math.pow(taille*100, 2))
-      console.log(Bmi)
+      console.log(bmi)
     }
     var handle3Change = (text) => {
 
@@ -199,8 +200,8 @@ const ExamenClinique = (props) => {
           placeholder={t("La taille (cm)")}
           onChange={handle2Change}
         />
-        <Text style={tailwind('text-lg p-2 text-gray-700')}>Le calcul de la surface corporelle (SC): {poids/Math.pow(taille/100, 2)}</Text>
-        <Text style={tailwind('text-lg p-2 text-gray-700')}>BMI: {0.0003207*Math.pow(poids*(0.7285-(0.0188*Math.log(poids))))*Math.pow(taille/100, 0.3)}</Text>
+        <Text style={tailwind('text-lg p-2 text-gray-700')}>BMI: {poids/Math.pow(taille/100, 2)}</Text>
+        <Text style={tailwind('text-lg p-2 text-gray-700')}>Le calcul de la surface corporelle (SC): {0.0003207*Math.pow((1000*poids),(0.7285-(0.0188*Math.log10(poids*1000))))*Math.pow(taille, 0.3)}</Text>
         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>TA aux deux bras après 5 min de repos :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAS</Text>
@@ -223,17 +224,17 @@ const ExamenClinique = (props) => {
           onChange={handle14Change}
         />
           <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("")}Rythme  :</Text>
-              <input  type="radio" value="régulier" name="gender1"onChange={handle15Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>régulier</Text>
-              <input  type="radio" value="irrégulier" name="gender1"onChange={handle15Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>irrégulier</Text>
+              <InputRd id="1" name1="régulier"  type="radio" value="régulier" name="gender1"onChange={handle15Change} /> 
+              <InputRd id="2" name1="irrégulier"  type="radio" value="irrégulier" name="gender1"onChange={handle15Change} /> 
               </div>
           </View>
           <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("")}Bruits du cœur  :</Text>
-              <input  type="radio" value="régulier" name="gender2"onChange={handle4Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>normaux</Text>
-              <input  type="radio" value="anormaux" name="gender2"onChange={handle4Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>anormaux</Text>
+              <InputRd id="3" name1="normaux"  type="radio" value="régulier" name="gender2"onChange={handle4Change} /> 
+              <InputRd id="4" name1="anormaux"  type="radio" value="anormaux" name="gender2"onChange={handle4Change} /> 
               </div>
           </View>
           {bruit === "anormaux" &&
@@ -241,20 +242,20 @@ const ExamenClinique = (props) => {
             <View style={tailwind(' items-center ')}>
               <Text style={tailwind('text-lg p-2 text-Indigo-700')}>Si anormaux :</Text>
               <View style={styles.row}>
-              <div  >
+              <div class="row mx-4">
                 
-                <input  type="radio" value="Paradoxal" name="gender3" onChange={handle5Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>Paradoxal</Text>
-                <input  type="radio" value="3ème bruit" name="gender3" onChange={handle5Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>3ème bruit</Text>
-                <input  type="radio" value="4ème bruit" name="gender3" onChange={handle5Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>4ème bruit</Text>
-                <input  type="radio" value="Dédoublement" name="gender3"onChange={handle5Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Dédoublement</Text>
+                <InputRd id="5" name1="Paradoxal"  type="radio" value="Paradoxal" name="gender3" onChange={handle5Change}/> 
+                <InputRd id="6" name1="3ème bruit"  type="radio" value="3ème bruit" name="gender3" onChange={handle5Change}/> 
+                <InputRd id="7" name1="4ème bruit"  type="radio" value="4ème bruit" name="gender3" onChange={handle5Change}/> 
+                <InputRd id="8" name1="Dédoublement"  type="radio" value="Dédoublement" name="gender3"onChange={handle5Change} /> 
               </div>
             </View></View>
           }
           <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>{t("")}Souffle cardiaque:</Text>
-              <input onChange={handle6Change} type="radio" value="Non" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input onChange={handle6Change} type="radio" value="Oui" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="9" name1="Non" onChange={handle6Change} type="radio" value="Non" name="gender4" /> 
+              <InputRd id="10" name1="Oui" onChange={handle6Change} type="radio" value="Oui" name="gender4" /> 
             </div>
           </View>
           {souf === true &&
@@ -263,10 +264,10 @@ const ExamenClinique = (props) => {
             onChangeText={handle7Change}
             />}
             <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Œdème périphérique :</Text>
-              <input  type="radio" value="Non" name="gender5" onChange={handle28Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input  type="radio" value="Oui" name="gender5"onChange={handle28Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="11" name1="Non"  type="radio" value="Non" name="gender5" onChange={handle28Change} /> 
+              <InputRd id="12" name1="Oui"  type="radio" value="Oui" name="gender5"onChange={handle28Change} /> 
             </div>
           </View>
           {peripherique === true &&
@@ -275,17 +276,17 @@ const ExamenClinique = (props) => {
             onChange={handle16Change}
             />}
           <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Reflux Hépato-jugulaire  :</Text>
-              <input  type="radio" value="Non" name="gender6" onChange={handle17Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input  type="radio" value="Oui" name="gender6"onChange={handle17Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="13" name1="Non"  type="radio" value="Non" name="gender6" onChange={handle17Change}/> 
+              <InputRd id="14" name1="Oui"  type="radio" value="Oui" name="gender6"onChange={handle17Change} /> 
             </div>
           </View>
           <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Pouls périphériques palpables:</Text>
-              <input onChange={handle8Change} type="radio" value="Non" name="gender7" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input onChange={handle8Change} type="radio" value="Oui" name="gender7" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="15" name1="Non" onChange={handle8Change} type="radio" value="Non" name="gender7" /> 
+              <InputRd id="16" name1="Oui" onChange={handle8Change} type="radio" value="Oui" name="gender7" /> 
             </div>
           </View>
           {poul === false &&
@@ -294,10 +295,10 @@ const ExamenClinique = (props) => {
             onChangeText={handle9Change}
             />}
           <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Varices   :</Text>
-              <input  type="radio" value="Non" name="gender8" onChange={handle29Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input  type="radio" value="Oui" name="gender8" onChange={handle29Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="17" name1="Non"  type="radio" value="Non" name="gender8" onChange={handle29Change}/> 
+              <InputRd id="18" name1="Oui"  type="radio" value="Oui" name="gender8" onChange={handle29Change}/> 
             </div>
           </View>
           {varices  === true &&

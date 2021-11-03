@@ -1,12 +1,14 @@
 import axios from "axios";
-const baseUrl = "https://b5dfde98a5f6.ngrok.io/";
+const baseUrl = "http://159.89.6.118:8080/test1/";
 export default {
   medicalService(url = baseUrl) {
     return {
       login: (values) => axios.post(url + "login", values),
       logout: () => axios.get(url + "logout"),
+      loginAdmin: (values) => axios.post(url + "loginadmin", values),
       addPatient: (values) => axios.post(url + "addPatient", values),
-      searchPatient: (cin) => axios.get(url + "search/" + cin),
+      searchPatient: (cin,cinD) => axios.get(url + "search1/" + cin+"/"+cinD),
+      allPatient: (cin) => axios.get(url + "getAllPatients" ),
       infosGenerales: (cin, values) => axios.post(url + "add-infos-generales/" + cin, values),
       examenClinique: (cin, values) => axios.post(url + "examen-clinque/" + cin, values),
       interrogatoire: (cin, values) => axios.post(url + "interrogatoire/" + cin, values),

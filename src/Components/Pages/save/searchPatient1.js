@@ -30,7 +30,7 @@ let config = {
 const SearchPatient1 = (props) => {
   const { t } = useTranslation();
   useEffect(() => {
-    props.search(search)
+    props.search(search,props.loggedUser.username)
   }, [])
 
 
@@ -44,7 +44,7 @@ const SearchPatient1 = (props) => {
   const handleSearch = () => {
     setSearch2(search)
     console.log(search)
-    props.search(search)
+    props.search(search,props.loggedUser.username)
 
 
   }
@@ -106,7 +106,8 @@ const SearchPatient1 = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  patientList: state.medicalService.patientList
+  patientList: state.medicalService.patientList,
+  loggedUser: state.medicalService.loggedUser,
 });
 const mapActionToProps = {
 

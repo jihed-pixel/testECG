@@ -44,7 +44,7 @@ import Ventricule2 from "./Components/Pages/save/ventricule2";
 import Autre from "./Components/Pages/save/autre";
 import FicheIRM from "./Components/Pages/save/ficheIRM";
 import FicheEffort from "./Components/Pages/save/fichieEffort";
-
+import Open from "./Components/Pages/open";
 import AspectSegment1 from "./Components/Pages/modify/aspectSegment1";
 import Cercle11 from "./Components/Pages/modify/cercle11";
 import Cercle21 from "./Components/Pages/modify/cercle21";
@@ -54,17 +54,23 @@ import Ventricule1 from "./Components/Pages/modify/ventricule1";
 import Autre1 from "./Components/Pages/modify/autre1";
 import FicheIRM1 from "./Components/Pages/modify/ficheIRM1";
 import FicheEffort1 from "./Components/Pages/modify/fichieEffort1";
+import Admin from "./Components/Pages/admin/Admin";
+import HomeAdmin from "./Components/Pages/admin/homeAdmin";
+import FilePatient from "./Components/Pages/admin/filePatient";
+import Patient from "./Components/Pages/admin/patient";
+import Patient1 from "./Components/Pages/admin/patient1";
 const App = () => {
   const Stack = createStackNavigator()
   return (
     <Provider store={store}>
       <NavigationContainer >
 
-<Stack.Navigator initialRouteName="Login" screenOptions={{
+<Stack.Navigator initialRouteName="Home" screenOptions={{
           headerShown: false
 
         }}
         >
+          <Stack.Screen name="Open" component={Open} />
            <Stack.Screen name="Home" component={Home} />
            <Stack.Screen name="Login" component={Login} />
            <Stack.Screen name="AddPatient" component={AddPatient} />
@@ -113,6 +119,11 @@ const App = () => {
           <Stack.Screen name="FicheIRM1" component={FicheIRM1} />
           <Stack.Screen name="FicheEffort1" component={FicheEffort1} />
           <Stack.Screen name="Ventricule1" component={Ventricule1} />
+          <Stack.Screen name="Admin" component={Admin} />
+          <Stack.Screen name="HomeAdmin" component={HomeAdmin} />
+          <Stack.Screen name="FilePatient" component={FilePatient} />
+          <Stack.Screen name="Patient" component={Patient} />
+          <Stack.Screen name="Patient1" component={Patient1} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

@@ -10,7 +10,7 @@ import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
-import FormInput3 from "../../Form/FormInput3";
+import InputRd from '../../Form/inputrd';
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
@@ -94,13 +94,13 @@ const Autre = (props) => {
             <Text style={tailwind('text-lg p-2 text-gray-700')}>Motif d’arrêt :</Text>
             <div  >
                 
-            <div><input onChange={handle3Change} type="radio" value="épuisement musculaire" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>épuisement musculaire</Text>
-                </div  ><div><input onChange={handle3Change} type="radio" value="troubles de conduction sévères" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>troubles de conduction sévères</Text>
-                </div  ><div><input onChange={handle3Change} type="radio" value="troubles de rythme sévères" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>troubles de rythme sévères</Text>
-                </div  ><div><input onChange={handle3Change} type="radio" value="troubles de répolarisation" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>troubles de répolarisation significatives</Text>
-                </div  ><div><input onChange={handle3Change} type="radio" value="dyspnée" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>dyspnée</Text>
-                </div  ><div><input onChange={handle3Change} type="radio" value="douleurs thoraciques" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>douleur thoracique</Text>
-                </div  ><div><input onChange={handle3Change} type="radio" value="douleurs thoraciques" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>atteinte de la FMT</Text>
+            <div><InputRd id="1" name1="épuisement musculaire" onChange={handle3Change} type="radio" value="épuisement musculaire" name="gender" /> 
+                </div  ><div><InputRd id="2" name1="troubles de conduction sévères" onChange={handle3Change} type="radio" value="troubles de conduction sévères" name="gender" /> 
+                </div  ><div><InputRd id="3" name1="troubles de rythme sévères" onChange={handle3Change} type="radio" value="troubles de rythme sévères" name="gender" /> 
+                </div  ><div><InputRd id="4" name1="troubles de répolarisation significatives" onChange={handle3Change} type="radio" value="troubles de répolarisation" name="gender" /> 
+                </div  ><div><InputRd id="5" name1="dyspnée" onChange={handle3Change} type="radio" value="dyspnée" name="gender" /> 
+                </div  ><div><InputRd id="6" name1="douleur thoracique" onChange={handle3Change} type="radio" value="douleurs thoraciques" name="gender" /> 
+                </div  ><div><InputRd id="7" name1="atteinte de la FMT" onChange={handle3Change} type="radio" value="douleurs thoraciques" name="gender" /> 
                 </div  >
             </div>
             <label><h3>Conclusion</h3>

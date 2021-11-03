@@ -12,6 +12,7 @@ import '../home.css';
 import Steps from "../../Form/Steps";
 import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
+import InputRd from '../../Form/inputrd';
 import "../Tran/i18nextInit";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
@@ -121,78 +122,78 @@ const EtudeOndeT = (props) => {
             <View style={tailwind(' items-center ')} >
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>{t("Étude de l'onde T")} </Text>
 
-                     <div  >
+                     <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>D1 : </Text>
-                        <input onChange={handle8Change} type="radio" value="+" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle8Change} type="radio" value="-" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle8Change} type="radio" value="B1" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="1" name1="positive" onChange={handle8Change} type="radio" value="+" name="gender2" /> 
+                        <InputRd id="2" name1="négative" onChange={handle8Change} type="radio" value="-" name="gender2" /> 
+                        <InputRd id="3" name1="biphasique" onChange={handle8Change} type="radio" value="B1" name="gender2" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>D2 : </Text>
-                        <input onChange={handle9Change} type="radio" value="+" name="gender3" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle9Change} type="radio" value="-" name="gender3" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle9Change} type="radio" value="B1" name="gender3" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="4" name1="positive" onChange={handle9Change} type="radio" value="+" name="gender3" /> 
+                        <InputRd id="5" name1="négative" onChange={handle9Change} type="radio" value="-" name="gender3" /> 
+                        <InputRd id="6" name1="biphasique" onChange={handle9Change} type="radio" value="B1" name="gender3" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>D3 : </Text>
-                        <input onChange={handle10Change} type="radio" value="+" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle10Change} type="radio" value="-" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle10Change} type="radio" value="B1" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="7" name1="positive" onChange={handle10Change} type="radio" value="+" name="gender4" /> 
+                        <InputRd id="8" name1="négative" onChange={handle10Change} type="radio" value="-" name="gender4" /> 
+                        <InputRd id="9" name1="biphasique" onChange={handle10Change} type="radio" value="B1" name="gender4" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>AVR : </Text>
-                        <input onChange={handle11Change} type="radio" value="+" name="gender5" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle11Change} type="radio" value="-" name="gender5" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle11Change} type="radio" value="B1" name="gender5" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="10" name1="positive" onChange={handle11Change} type="radio" value="+" name="gender5" /> 
+                        <InputRd id="11" name1="négative" onChange={handle11Change} type="radio" value="-" name="gender5" /> 
+                        <InputRd id="12" name1="biphasique" onChange={handle11Change} type="radio" value="B1" name="gender5" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>AVL : </Text>
-                        <input onChange={handle12Change} type="radio" value="+" name="gender6" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle12Change} type="radio" value="-" name="gender6" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle12Change} type="radio" value="B1" name="gender6" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="13" name1="positive" onChange={handle12Change} type="radio" value="+" name="gender6" /> 
+                        <InputRd id="14" name1="négative" onChange={handle12Change} type="radio" value="-" name="gender6" /> 
+                        <InputRd id="15" name1="biphasique" onChange={handle12Change} type="radio" value="B1" name="gender6" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>AVF : </Text>
-                        <input onChange={handle13Change} type="radio" value="+" name="gender7" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle13Change} type="radio" value="-" name="gender7" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle13Change} type="radio" value="B1" name="gender7" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="16" name1="positive" onChange={handle13Change} type="radio" value="+" name="gender7" /> 
+                        <InputRd id="17" name1="négative" onChange={handle13Change} type="radio" value="-" name="gender7" /> 
+                        <InputRd id="18" name1="biphasique" onChange={handle13Change} type="radio" value="B1" name="gender7" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>V1 : </Text>
-                        <input onChange={handle14Change} type="radio" value="+" name="gender8" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle14Change} type="radio" value="-" name="gender8" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle14Change} type="radio" value="B1" name="gender8" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="19" name1="positive" onChange={handle14Change} type="radio" value="+" name="gender8" /> 
+                        <InputRd id="20" name1="négative" onChange={handle14Change} type="radio" value="-" name="gender8" /> 
+                        <InputRd id="21" name1="biphasique" onChange={handle14Change} type="radio" value="B1" name="gender8" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>V2 : </Text>
-                        <input onChange={handle15Change} type="radio" value="+" name="gender9" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle15Change} type="radio" value="-" name="gender9" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle15Change} type="radio" value="B1" name="gender9" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="22" name1="positive" onChange={handle15Change} type="radio" value="+" name="gender9" /> 
+                        <InputRd id="23" name1="négative" onChange={handle15Change} type="radio" value="-" name="gender9" /> 
+                        <InputRd id="24" name1="biphasique" onChange={handle15Change} type="radio" value="B1" name="gender9" /> 
                     </div>
 
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>V3 : </Text>
-                        <input onChange={handle17Change} type="radio" value="+" name="gender11" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle17Change} type="radio" value="-" name="gender11" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle17Change} type="radio" value="B1" name="gender11" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="25" name1="positive" onChange={handle17Change} type="radio" value="+" name="gender11" /> 
+                        <InputRd id="26" name1="négative" onChange={handle17Change} type="radio" value="-" name="gender11" /> 
+                        <InputRd id="27" name1="biphasique" onChange={handle17Change} type="radio" value="B1" name="gender11" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>V4 : </Text>
-                        <input onChange={handle18Change} type="radio" value="+" name="gender12" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle18Change} type="radio" value="-" name="gender12" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle18Change} type="radio" value="B1" name="gender12" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="28" name1="positive" onChange={handle18Change} type="radio" value="+" name="gender12" /> 
+                        <InputRd id="29" name1="négative" onChange={handle18Change} type="radio" value="-" name="gender12" /> 
+                        <InputRd id="30" name1="biphasique" onChange={handle18Change} type="radio" value="B1" name="gender12" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>V5 : </Text>
-                        <input onChange={handle19Change} type="radio" value="+" name="gender13" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle19Change} type="radio" value="-" name="gender13" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle19Change} type="radio" value="B1" name="gender13" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="31" name1="positive" onChange={handle19Change} type="radio" value="+" name="gender13" /> 
+                        <InputRd id="32" name1="négative" onChange={handle19Change} type="radio" value="-" name="gender13" /> 
+                        <InputRd id="33" name1="biphasique" onChange={handle19Change} type="radio" value="B1" name="gender13" /> 
                     </div>
-                    <div  >
+                    <div class="row mx-4">
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>V6 : </Text>
-                        <input onChange={handle20Change} type="radio" value="+" name="gender14" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("positive")}</Text>
-                        <input onChange={handle20Change} type="radio" value="-" name="gender14" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("négative")}</Text>
-                        <input onChange={handle20Change} type="radio" value="B1" name="gender14" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("biphasique")}</Text>
+                        <InputRd id="34" name1="positive" onChange={handle20Change} type="radio" value="+" name="gender14" /> 
+                        <InputRd id="35" name1="négative" onChange={handle20Change} type="radio" value="-" name="gender14" /> 
+                        <InputRd id="36" name1="biphasique" onChange={handle20Change} type="radio" value="B1" name="gender14" /> 
                     </div>
 
 

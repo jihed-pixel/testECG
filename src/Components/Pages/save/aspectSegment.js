@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
 //import 'localstorage-polyfill';
 import FormInput from '../../Form/FormInput';
+import InputRd from '../../Form/inputrd';
 import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
@@ -82,18 +83,18 @@ const AspectSegment = (props) => {
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Aspect de Brugada en V1 et V2 : </Text>
             <Text style={tailwind('text-lg p-2 text-Indigo-700')}> </Text>
             <View style={styles.row}>
-            <div  >
+            <div class="row mx-4" >
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("Aspect de Brugada en V1 et V2")}</Text>
-                <input onChange={handle2Change} type="radio" value="Non" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle2Change} type="radio" value="Oui" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="1" name1="Non" onChange={handle2Change} type="radio" value="Non" name="gender" /> 
+                <InputRd id="2" name1="Oui" onChange={handle2Change} type="radio" value="Oui" name="gender" /> 
             </div>
             
             </View>
             {asp === true &&
-            <div  >
-            <input  type="radio" value="type1" name="gender155" onChange={handle3Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>type1</Text>
-                <input  type="radio" value="type3" name="gender155" onChange={handle3Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>type2</Text>
-                <input  type="radio" value="type3" name="gender155" onChange={handle3Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>type3</Text>
+            <div class="row mx-4" >
+            <InputRd id="3" name1="type1"  type="radio" value="type1" name="gender155" onChange={handle3Change}/> 
+                <InputRd id="4" name1="type2"  type="radio" value="type3" name="gender155" onChange={handle3Change}/> 
+                <InputRd id="5" name1="type3"  type="radio" value="type3" name="gender155" onChange={handle3Change}/> 
             </div>}
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Intervalle QT :</Text>
         <FormInput3

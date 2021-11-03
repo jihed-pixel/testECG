@@ -14,6 +14,7 @@ import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
+import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 let config = {
       num: [4, 7],
@@ -366,14 +367,14 @@ const FicheIRM = (props) => {
             </label>
             </div>
             <h3>CINETIQUE SEGMENTAIRE VG :</h3>
-            <div  >
-                <input onChange={handle16Change} type="radio" value="Akinésie" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Akinésie</Text>
-                <input onChange={handle16Change} type="radio" value="Dyskinésie" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Dyskinésie</Text>
-                <input onChange={handle16Change} type="radio" value="Asynchronisme" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Asynchronisme</Text>
+            <div class="row mx-4">
+                <InputRd id="1" name1="Akinésie" onChange={handle16Change} type="radio" value="Akinésie" name="gender" /> 
+                <InputRd id="2" name1="Dyskinésie" onChange={handle16Change} type="radio" value="Dyskinésie" name="gender" /> 
+                <InputRd id="3" name1="Asynchronisme" onChange={handle16Change} type="radio" value="Asynchronisme" name="gender" /> 
             </div>
-            <div  >
-                <input onChange={handle16Change} type="radio" value="Hypokinésie" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Hypokinésie</Text>
-                <input onChange={handle16Change} type="radio" value="Homogène" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Homogène</Text>
+            <div class="row mx-4">
+                <InputRd id="4" name1="Hypokinésie" onChange={handle16Change} type="radio" value="Hypokinésie" name="gender" /> 
+                <InputRd id="5" name1="Homogène" onChange={handle16Change} type="radio" value="Homogène" name="gender" /> 
             </div>
             {vg === "Akinésie" &&
                     <FormInput
@@ -435,14 +436,14 @@ const FicheIRM = (props) => {
             </label>
             </div>
             <h3>CINETIQUE SEGMENTAIRE VD :</h3>
-            <div  >
-                <input onChange={handle26Change} type="radio" value="Akinésie" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Akinésie</Text>
-                <input onChange={handle26Change} type="radio" value="Dyskinésie" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Dyskinésie</Text>
-                <input onChange={handle26Change} type="radio" value="Asynchronisme" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Asynchronisme</Text>
+            <div class="row mx-4">
+                <InputRd id="6" name1="Akinésie" onChange={handle26Change} type="radio" value="Akinésie" name="gender1" /> 
+                <InputRd id="7" name1="Dyskinésie" onChange={handle26Change} type="radio" value="Dyskinésie" name="gender1" /> 
+                <InputRd id="8" name1="Asynchronisme" onChange={handle26Change} type="radio" value="Asynchronisme" name="gender1" /> 
             </div>
-            <div  >
-                <input onChange={handle26Change} type="radio" value="Hypokinésie" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Hypokinésie</Text>
-                <input onChange={handle26Change} type="radio" value="Homogène" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Homogène</Text>
+            <div class="row mx-4">
+                <InputRd id="9" name1="Hypokinésie" onChange={handle26Change} type="radio" value="Hypokinésie" name="gender1" /> 
+                <InputRd id="10" name1="Homogène" onChange={handle26Change} type="radio" value="Homogène" name="gender1" /> 
             </div>
             {longaxe === "Akinésie" &&
                     <FormInput
@@ -465,53 +466,53 @@ const FicheIRM = (props) => {
                     onChange={handle37Change}
                   />}
             <h3 class="text-primary">Étude injectée (Gadolinium) :</h3>
-            <div  >
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-gray-700')}>Rehaussement tardif à 5-10 min</Text>
-                <input onChange={handle27Change} type="radio" value="Non" name="gender772" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle27Change} type="radio" value="Oui" name="gender772" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="11" name1="Non" onChange={handle27Change} type="radio" value="Non" name="gender772" /> 
+                <InputRd id="12" name1="Oui" onChange={handle27Change} type="radio" value="Oui" name="gender772" /> 
             </div>
             {rehauTar === true &&
             <div>
-                <div  >
+                <div class="row mx-4">
             <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- pas de prise de contraste :</Text>
-            <input  type="radio" value="Non" name="gender773" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-            <input  type="radio" value="Oui" name="gender773" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+            <InputRd id="13" name1="Non"  type="radio" value="Non" name="gender773" /> 
+            <InputRd id="14" name1="Oui"  type="radio" value="Oui" name="gender773" /> 
         </div>
-                <div  >
+                <div class="row mx-4">
             <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- Prise de type ischémique :</Text>
-            <input onChange={handle71Change} type="radio" value="Non" name="gender773"onChange={handle38Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-            <input onChange={handle71Change} type="radio" value="Oui" name="gender773" onChange={handle38Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+            <InputRd id="15" name1="Non" onChange={handle71Change} type="radio" value="Non" name="gender773"onChange={handle38Change} /> 
+            <InputRd id="16" name1="Oui" onChange={handle71Change} type="radio" value="Oui" name="gender773" onChange={handle38Change}/> 
         </div>
         {test1 === true &&
-                    <div  ><div  >
+                    <div class="row mx-4"><div class="row mx-4">
                     <Text style={tailwind('text-lg p-2 text-Indigo-700')}>sous endocardique :</Text>
-                    <input  type="radio" value="Non" name="gender7773"onChange={handle39Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                    <input  type="radio" value="Oui" name="gender7773"onChange={handle39Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                    <InputRd id="17" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle39Change} /> 
+                    <InputRd id="18" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle39Change} /> 
                 </div>
-                <div  >
+                <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>transmurale :</Text>
-                <input  type="radio" value="Non" name="gender7773"onChange={handle40Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input  type="radio" value="Oui" name="gender7773"onChange={handle40Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="19" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle40Change} /> 
+                <InputRd id="20" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle40Change} /> 
             </div></div>}
-        <div  >
+        <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- Prise non ischémique :</Text>
-                <input onChange={handle72Change} type="radio" value="Non" name="gender774" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle72Change} type="radio" value="Oui" name="gender774" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="21" name1="Non" onChange={handle72Change} type="radio" value="Non" name="gender774" /> 
+                <InputRd id="22" name1="Oui" onChange={handle72Change} type="radio" value="Oui" name="gender774" /> 
             </div>
             {test2 === true &&
-                    <div  ><div  >
+                    <div class="row mx-4"><div class="row mx-4">
                     <Text style={tailwind('text-lg p-2 text-Indigo-700')}>sous epicardique :</Text>
-                    <input  type="radio" value="Non" name="gender7773"onChange={handle41Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                    <input  type="radio" value="Oui" name="gender7773"onChange={handle41Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                    <InputRd id="23" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle41Change} /> 
+                    <InputRd id="24" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle41Change} /> 
                 </div>
-                <div  >
+                <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>diffuse :</Text>
-                <input  type="radio" value="Non" name="gender7773"onChange={handle42Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input  type="radio" value="Oui" name="gender7773"onChange={handle42Change} /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
-            </div><div  >
+                <InputRd id="25" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle42Change} /> 
+                <InputRd id="26" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle42Change} /> 
+            </div><div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>patchy :</Text>
-                <input  type="radio" value="Non" name="gender7773" onChange={handle43Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input  type="radio" value="Oui" name="gender7773" onChange={handle43Change}/> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="27" name1="Non"  type="radio" value="Non" name="gender7773" onChange={handle43Change}/> 
+                <InputRd id="28" name1="Oui"  type="radio" value="Oui" name="gender7773" onChange={handle43Change}/> 
             </div></div>}
                   </div>
             }
